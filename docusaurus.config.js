@@ -71,7 +71,12 @@ const config = {
 			},
 			footer: {
 				style: 'dark',
-				copyright: `Copyright © ${new Date().getFullYear()} SpecteraLabs, Inc. Built with Docusaurus.`
+				logo: {
+					alt: 'Deploys by Netlify',
+					src: 'https://www.netlify.com/img/global/badges/netlify-color-accent.svg',
+					href: 'https://netlify.com/'
+				},
+				copyright: `Copyright © ${new Date().getFullYear()} SpecteraLabs.`
 			},
 			prism: {
 				theme: lightCodeTheme,
