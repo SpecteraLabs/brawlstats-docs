@@ -33,6 +33,18 @@ const config = {
 			})
 		]
 	],
+	plugins: [
+		[
+			'docusaurus-plugin-typedoc',
+			{
+				id: 'brawlstats',
+				entryPoints: ['./npm-packages/packages/brawlstats/src/index.ts'],
+				tsconfig: './npm-packages/packages/brawlstats/src/tsconfig.json',
+				readme: 'none',
+				out: 'Documentation/brawlstats'
+			}
+		]
+	],
 
 	themeConfig:
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */

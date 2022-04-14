@@ -1,0 +1,3 @@
+[submodule "npm-packages"]
+	path = npm-packages
+	url = https://github.com/SpecteraLabs/npm-packages
