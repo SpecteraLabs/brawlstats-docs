@@ -36,7 +36,7 @@ const client = new Client({
   // or all brawlers available in the game
   const { brawlers } = client;
   // or even leaderboards(rankings)
-  const leaderboards = client.leaderboards.fetch({
+  const leaderboards = await client.leaderboards.fetch({
     mode: 'players',
     region: 'global'
   });
@@ -62,7 +62,7 @@ const events = await client.rotation.get();
 // or all brawlers available in the game
 const { brawlers } = client;
 // or even leaderboards(rankings)
-const leaderboards = client.leaderboards.fetch({
+const leaderboards = await client.leaderboards.fetch({
   mode: 'players',
   region: 'global'
 });
