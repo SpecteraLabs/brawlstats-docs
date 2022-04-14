@@ -3,11 +3,13 @@ sidebar_position: 1
 title: Migrating from v2
 ---
 
-In v3 we have added many changes and performance updates which help your code look and feel better.
-But before we hop in, let's see the breaking changes.
+In v3 we have added many changes and performance updates which help your code look and feel better. But before we hop
+in, let's see the breaking changes.
 
 ## Breaking changes
-In v3 we have removed all methods such as `getBrawlers` and `getRotation`, etc from the client so as a replacement we have adopted managers system, so here is how your code should change:
+
+In v3 we have removed all methods such as `getBrawlers` and `getRotation`, etc from the client so as a replacement we
+have adopted managers system, so here is how your code should change:
 
 ```diff
 - await client.getBrawlers()
@@ -21,10 +23,12 @@ In v3 we have removed all methods such as `getBrawlers` and `getRotation`, etc f
 ```
 
 ## New Features
+
 As stated in the above [section](#breaking-changes) we have added managers, here are some advantages of them:
-* They have cache implemented inside them reducing your data call time.
-* Some have an additional method called `fetchMany` which allows you to fetch multiple players/clubs at once.
-* We have added leaderboards :tada:, you can use them via `client.leaderboards`.
-* We now export more types for typescript users.
-* We now also have a `BattlelogManager` which can be accessed via `client.battlelogs`.
-* `client.brawlers` is no longer async :tada:.
+
+- They have cache implemented inside them reducing your data call time.
+- Some have an additional method called `fetchMany` which allows you to fetch multiple players/clubs at once.
+- We have added leaderboards :tada:, you can use them via `client.leaderboards`.
+- We now export more types for typescript users.
+- We now also have a `BattlelogManager` which can be accessed via `client.battlelogs`.
+- `client.brawlers` is no longer async :tada:.
