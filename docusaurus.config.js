@@ -6,7 +6,7 @@ const { npm2yarn2pnpm } = require('@sapphire/docusaurus-plugin-npm2yarn2pnpm');
 const config = {
 	title: 'Brawlstats',
 	tagline: 'A highly advanced API wrapper for brawlstars.',
-	url: 'https://brawlstats.js.org/',
+	url: 'https://brawlstatsjs.netlify.app',
 	baseUrl: '/',
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'warn',
