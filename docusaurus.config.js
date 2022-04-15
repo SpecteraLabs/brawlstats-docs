@@ -21,7 +21,6 @@ const config = {
 			({
 				docs: {
 					sidebarPath: require.resolve('./sidebars.js'),
-					// Please change this to your repo.
 					editUrl: 'https://github.com/SpecteraLabs/brawlstats-docs/edit/main',
 					remarkPlugins: [npm2yarn2pnpm],
 					showLastUpdateAuthor: true,
@@ -41,7 +40,12 @@ const config = {
 				entryPoints: ['./npm-packages/packages/brawlstats/src/index.ts'],
 				tsconfig: './npm-packages/packages/brawlstats/src/tsconfig.json',
 				readme: 'none',
-				out: 'Documentation/brawlstats'
+				out: 'Documentation/brawlstats',
+				sidebar: {
+					categoryLabel: 'API Documentation',
+					position: 0,
+					fullNames: true
+				}
 			}
 		]
 	],
