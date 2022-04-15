@@ -1,0 +1,39 @@
+---
+sidebar_position: 3
+title: Getting events rotation
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+To get the events rotation you do:
+<Tabs groupId="language-choice">
+<TabItem value="javascript" label="JavaScript" default>
+
+```javascript
+client.rotation.get({
+	timezone: 'Asia/Kolkata'
+})
+  .then(rotation => {
+	console.log(rotation);
+  })
+  .catch(error => {
+	console.error(error);
+  });
+```
+</TabItem>
+<TabItem value="esm" label="ESM">
+
+```javascript
+await client.rotation.get({
+	timezone: 'Asia/Kolkata'
+});
+```
+</TabItem>
+</Tabs>
+
+:::note
+
+The timezone is optional. If you don't pass it, the timezone will be set to `UTC`.
+
+:::

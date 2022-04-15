@@ -73,7 +73,7 @@ const config = {
 						activeBaseRegex: '^/docs/(General|Documentation)/.+$'
 					},
 					{
-						to: 'docs/Guide/getting-started',
+						to: 'docs/Guide/getting-started/getting-started-with-brawlstats',
 						position: 'left',
 						label: 'Guide',
 						activeBaseRegex: '^/docs/Guide/.+$'

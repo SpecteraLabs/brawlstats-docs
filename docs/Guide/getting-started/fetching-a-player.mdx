@@ -1,0 +1,67 @@
+---
+sidebar_position: 1
+title: Getting players data
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Unlike other API wrappers, we not only let you get info of a player but also about **multiple** players at once.
+
+## Getting Info of a Single Player
+<Tabs groupId="language-choice">
+<TabItem value="javascript" label="JavaScript" default>
+
+```javascript
+client.players.fetch('player-tag')
+  .then(player => {
+	console.log(player);
+  })
+  .catch(error => {
+	console.error(error);
+  });
+```
+</TabItem>
+<TabItem value="esm" label="ESM">
+
+```javascript
+await client.players.fetch('player-tag');
+```
+</TabItem>
+</Tabs>
+
+:::note
+
+Instead of using `player-tag` as your tag, you can also use `#player-tag` or `%23player-tag` to get the same result. 
+For example, `22QJ0JPVJ`, `#22QJ0JPVJ` and `%2322QJ0JPVJ` all return same player. 
+
+:::
+
+## Getting info of multiple players
+<Tabs groupId="language-choice">
+<TabItem value="javascript" label="JavaScript" default>
+
+```javascript
+client.players.fetchMany('player-tag-1', 'player-tag-2', 'player-tag-3')
+  .then(player => {
+	console.log(player);
+  })
+  .catch(error => {
+	console.error(error);
+  });
+```
+</TabItem>
+<TabItem value="esm" label="ESM">
+
+```javascript
+await client.players.fetchMany('player-tag-1', 'player-tag-2', 'player-tag-3');
+```
+</TabItem>
+</Tabs>
+
+:::note
+
+Instead of using `player-tag` as your tag, you can also use `#player-tag` or `%23player-tag` to get the same result. 
+For example, `22QJ0JPVJ`, `#22QJ0JPVJ` and `%2322QJ0JPVJ` all return same player. 
+
+:::

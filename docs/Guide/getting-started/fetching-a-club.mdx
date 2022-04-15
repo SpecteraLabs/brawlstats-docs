@@ -1,0 +1,67 @@
+---
+sidebar_position: 2
+title: Getting clubs data
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Unlike other API wrappers, we not only let you get info of a club but also about **multiple** clubs at once.
+
+## Getting Info of a Single club
+<Tabs groupId="language-choice">
+<TabItem value="javascript" label="JavaScript" default>
+
+```javascript
+client.clubs.fetch('club-tag')
+  .then(club => {
+	console.log(club);
+  })
+  .catch(error => {
+	console.error(error);
+  });
+```
+</TabItem>
+<TabItem value="esm" label="ESM">
+
+```javascript
+await client.clubs.fetch('club-tag');
+```
+</TabItem>
+</Tabs>
+
+:::note
+
+Instead of using `club-tag` as your tag, you can also use `#club-tag` or `%23club-tag` to get the same result. 
+For example, `XYZ`, `#XYZ` and `%23XYZ` all return same club. 
+
+:::
+
+## Getting info of multiple clubs
+<Tabs groupId="language-choice">
+<TabItem value="javascript" label="JavaScript" default>
+
+```javascript
+client.clubs.fetchMany('club-tag-1', 'club-tag-2', 'club-tag-3')
+  .then(club => {
+	console.log(club);
+  })
+  .catch(error => {
+	console.error(error);
+  });
+```
+</TabItem>
+<TabItem value="esm" label="ESM">
+
+```javascript
+await client.clubs.fetchMany('club-tag-1', 'club-tag-2', 'club-tag-3');
+```
+</TabItem>
+</Tabs>
+
+:::note
+
+Instead of using `club-tag` as your tag, you can also use `#club-tag` or `%23club-tag` to get the same result. 
+For example, `XYZ`, `#XYZ` and `%23XYZ` all return same club. 
+
+:::

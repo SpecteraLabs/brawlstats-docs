@@ -1,0 +1,62 @@
+---
+sidebar_position: 0
+title: Getting started with Brawlstats
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+To install `brawlstats` you can run the following command:
+
+```bash npm2yarn2pnpm
+npm install brawlstats
+```
+
+## Demo Client
+
+Here is a quick client example to get you started:
+
+<Tabs groupId="language-choice">
+<TabItem value="javascript" label="JavaScript" default>
+
+```javascript
+const { Client } = require('brawlstats');
+
+const client = new Client({
+  token: 'your-api-key'
+});
+```
+
+</TabItem>
+<TabItem value="esm" label="ESM">
+
+```javascript
+import { Client } from 'brawlstats';
+
+const client = new Client({
+  token: 'your-api-key'
+});
+```
+
+</TabItem>
+<TabItem value="umd" label="UMD">
+
+```javascript
+const client = new BrawlStats.Client({
+  token: 'your-api-key'
+});
+```
+
+</TabItem>
+</Tabs>
+
+:::tip
+
+You can directly call the client without a constructor if you have your api-key inside an environment variable named
+`BRAWLSTARS_TOKEN` like:
+
+```js
+new Client();
+```
+
+:::
