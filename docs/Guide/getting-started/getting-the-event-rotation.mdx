@@ -7,33 +7,38 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 To get the events rotation you do:
+
 <Tabs groupId="language-choice">
 <TabItem value="javascript" label="JavaScript" default>
 
 ```javascript
-client.rotation.get({
-	timezone: 'Asia/Kolkata'
-})
-  .then(rotation => {
-	console.log(rotation);
+client.rotation
+  .get({
+    timezone: 'Asia/Kolkata'
   })
-  .catch(error => {
-	console.error(error);
+  .then((rotation) => {
+    console.log(rotation);
+  })
+  .catch((error) => {
+    console.error(error);
   });
 ```
+
 </TabItem>
 <TabItem value="esm" label="ESM">
 
 ```javascript
 await client.rotation.get({
-	timezone: 'Asia/Kolkata'
+  timezone: 'Asia/Kolkata'
 });
 ```
+
 </TabItem>
 </Tabs>
 
 :::note
 
-The timezone is optional. If you don't pass it, the timezone will be set to `UTC`.
+The timezone is optional. If you don't pass it, the timezone will be set to `UTC`. You can read more about this at the
+[RotationOptions](../../Documentation/brawlstats/interfaces/RotationOptions.md) page.
 
 :::

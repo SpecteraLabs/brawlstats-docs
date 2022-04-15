@@ -1,0 +1,84 @@
+---
+sidebar_position: 4
+title: Getting the rankings in a leaderboard
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Leaderboards are of two types:
+* Player or Club leaderboards.
+* Brawler leaderboards.
+
+These are of two types because they need different options but return the same data. So let's see how you access these two types.
+
+## Player or Club leaderboards.
+The player or club leaderboard needs only two options, `mode` which is either `'players'` or `'clubs'` and the region.
+<Tabs groupId="language-choice">
+<TabItem value="javascript" label="JavaScript" default>
+
+```javascript
+client.leaderboards
+  .fetch({ mode: 'players', region: 'global' }) // or mode can be clubs
+  .then((leaderboard) => {
+    console.log(leaderboard);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+</TabItem>
+<TabItem value="esm" label="ESM">
+
+```javascript
+await client.leaderboards.fetch({ mode: 'players', region: 'global' }); // or mode can be clubs
+```
+
+</TabItem>
+</Tabs>
+
+
+## Brawler leaderboards.
+The brawler needs three options, `mode` which is `'brawlers'`, the brawler name and the region.
+<Tabs groupId="language-choice">
+<TabItem value="javascript" label="JavaScript" default>
+
+```javascript
+client.leaderboards
+  .fetch({ mode: 'brawlers', region: 'global', name: 'SHELLY' }) 
+  .then((leaderboard) => {
+    console.log(leaderboard);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+</TabItem>
+<TabItem value="esm" label="ESM">
+
+```javascript
+await client.leaderboards.fetch({ mode: 'brawlers', region: 'global', name: 'SHELLY' });
+```
+
+</TabItem>
+</Tabs>
+
+## Extra Info
+The region must be either `'global'` or a two letter country name, corrently we don't offer typings for this but you can either use declaration merging like this:
+```typescript
+// augment.d.ts
+declare module 'brawlstats' {
+	interface LeaderboardOptions {
+		region: 'us' | 'in' | 'jp' | 'global';
+	}
+	interface LeaderboardBrawlerOptions {
+		region: 'us' | 'in' | 'jp' | 'global';
+	}
+	interface RestLeaderboardOptions {
+		region: 'us' | 'in' | 'jp' | 'global';
+	}
+}
+```
+and submit a [pr](https://github.com/SpecteraLabs/npm-packages) if you want :wink:
