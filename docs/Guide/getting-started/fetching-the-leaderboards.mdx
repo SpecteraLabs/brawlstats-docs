@@ -7,13 +7,17 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 Leaderboards are of two types:
-* Player or Club leaderboards.
-* Brawler leaderboards.
 
-These are of two types because they need different options but return the same data. So let's see how you access these two types.
+- Player or Club leaderboards.
+- Brawler leaderboards.
+
+These are of two types because they need different options but return the same data. So let's see how you access these
+two types.
 
 ## Player or Club leaderboards.
+
 The player or club leaderboard needs only two options, `mode` which is either `'players'` or `'clubs'` and the region.
+
 <Tabs groupId="language-choice">
 <TabItem value="javascript" label="JavaScript" default>
 
@@ -38,15 +42,16 @@ await client.leaderboards.fetch({ mode: 'players', region: 'global' }); // or mo
 </TabItem>
 </Tabs>
 
-
 ## Brawler leaderboards.
+
 The brawler needs three options, `mode` which is `'brawlers'`, the brawler name and the region.
+
 <Tabs groupId="language-choice">
 <TabItem value="javascript" label="JavaScript" default>
 
 ```javascript
 client.leaderboards
-  .fetch({ mode: 'brawlers', region: 'global', name: 'SHELLY' }) 
+  .fetch({ mode: 'brawlers', region: 'global', name: 'SHELLY' })
   .then((leaderboard) => {
     console.log(leaderboard);
   })
@@ -66,19 +71,23 @@ await client.leaderboards.fetch({ mode: 'brawlers', region: 'global', name: 'SHE
 </Tabs>
 
 ## Extra Info
-The region must be either `'global'` or a two letter country name, corrently we don't offer typings for this but you can either use declaration merging like this:
+
+The region must be either `'global'` or a two letter country name, corrently we don't offer typings for this but you can
+either use declaration merging like this:
+
 ```typescript
 // augment.d.ts
 declare module 'brawlstats' {
-	interface LeaderboardOptions {
-		region: 'us' | 'in' | 'jp' | 'global';
-	}
-	interface LeaderboardBrawlerOptions {
-		region: 'us' | 'in' | 'jp' | 'global';
-	}
-	interface RestLeaderboardOptions {
-		region: 'us' | 'in' | 'jp' | 'global';
-	}
+  interface LeaderboardOptions {
+    region: 'us' | 'in' | 'jp' | 'global';
+  }
+  interface LeaderboardBrawlerOptions {
+    region: 'us' | 'in' | 'jp' | 'global';
+  }
+  interface RestLeaderboardOptions {
+    region: 'us' | 'in' | 'jp' | 'global';
+  }
 }
 ```
+
 or write typings for it and submit a [pr](https://github.com/SpecteraLabs/npm-packages/) :wink:.

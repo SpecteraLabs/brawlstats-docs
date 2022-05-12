@@ -4,14 +4,17 @@ sidebar_position: 1
 ---
 
 ## How it works
+
 Before we start let us check how caching works.
-* We first extend an [EventEmitter](https://nodejs.org/api/events.html#events_eventemitter) class and then we create a new [Map](https://nodejs.org/api/util.html#util_class_map) inside it.
-* Then we use timers to delete the key after 10 minutes (if tts is not specified)
+
+-   We first extend an [EventEmitter](https://nodejs.org/api/events.html#events_eventemitter) class and then we create a new [Map](https://nodejs.org/api/util.html#util_class_map) inside it.
+-   Then we use timers to delete the key after 10 minutes (if tts is not specified)
 
 But Why Timeout?
 Normally, let's say you got your stats, you played a game and want your stats again, we would return cached stats and not the real stats, but if there is a tts for the key, you will get the real stats after cache expires.
 
 ## Library Comparision
+
 Currently the only libraries which support caching on brawlstars api are [brawlstars](https://npmjs.com/package/brawlstars) and [us](https://npmjs.com/package/brawlstats).
 
 brawlstars uses [node-cache](https://npmjs.com/package/node-cache) to cache the data. While it is great library, it is extremely slow and not recommended for use.
