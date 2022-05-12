@@ -6,7 +6,7 @@ const { npm2yarn2pnpm } = require('@sapphire/docusaurus-plugin-npm2yarn2pnpm');
 const config = {
 	title: 'Brawlstats',
 	tagline: 'A highly advanced API wrapper for brawlstars.',
-	url: 'https://brawlstatsjs.netlify.app',
+	url: 'https://brawlstats.js.org',
 	baseUrl: '/',
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'warn',
@@ -84,6 +84,14 @@ const config = {
 						position: 'right'
 					}
 				]
+			},
+			algolia: {
+				appId: 'UUJZDB2MWL',
+
+				apiKey: '4e46cee600c439f4ed6c07dd42fac162',
+
+				indexName: 'brawlstatsjs',
+				contextualSearch: false
 			},
 			footer: {
 				style: 'dark',
